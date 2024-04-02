@@ -46,6 +46,7 @@ const UpdateProduct = () => {
     })
     useEffect(() => {
         let dataUrl = `https://bbreact-2.onrender.com/api/ListOfProducts/${id}`
+        console.log(`${id}`)
         axios.get(dataUrl).then((res) => {
            prodData({
             ...data,

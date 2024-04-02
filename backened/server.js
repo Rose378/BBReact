@@ -11,8 +11,8 @@ const port = process.env.PORT;
 
 
 app.use(cors({
-    origin: 'https://tourmaline-banoffee-584430.netlify.app',
-    methods: ['GET', 'POST'],
+    origin: ['https://tourmaline-banoffee-584430.netlify.app','http://localhost:3001'],
+    methods: ['GET', 'POST','PUT' , 'DELETE'],
     allowedHeaders: ['Content-Type', 'Authorization']
   }));
   app.options('*', cors());
