@@ -20,7 +20,7 @@ class ProductAdmin extends React.Component{
 
     //get all rpoducts
     getProducts = () => {
-        let dataUrl = `http://127.0.0.1:4000/api/ListOfProducts/`;
+        let dataUrl = `https://bbreact.onrender.com/api/ListOfProducts/`;
     axios.get(dataUrl).then((res) => {
         console.log(res.data)
         this.setState({
@@ -37,7 +37,7 @@ class ProductAdmin extends React.Component{
 
     //delete
     deleteProduct = (prodId) => {
-        let dataUrl = `http://127.0.0.1:4000/api/ListOfProducts/${prodId}`;
+        let dataUrl = `https://bbreact.onrender.com/api/ListOfProducts/${prodId}`;
         axios.delete(dataUrl).then((res) => {
             this.getProducts()
         }).catch((err) => {
