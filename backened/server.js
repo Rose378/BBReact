@@ -12,7 +12,7 @@ const port = process.env.PORT;
 app.use(cors())
 
 // Define the origins from which requests are allowed
-const allowedOrigins = ['localhost:3001/', 'https://bbreact.onrender.com'];
+const allowedOrigins = ['localhost:3001/', 'https://bbreact-2.onrender.com'];
 
 // Configure CORS middleware
 app.use(cors({
