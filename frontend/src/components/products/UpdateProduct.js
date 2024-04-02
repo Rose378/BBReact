@@ -45,7 +45,7 @@ const UpdateProduct = () => {
                 info:'',
     })
     useEffect(() => {
-        let dataUrl = `https://bbreact.onrender.com/api/ListOfProducts/${id}`
+        let dataUrl = `https://bbreact-2.onrender.com/api/ListOfProducts/${id}`
         axios.get(dataUrl).then((res) => {
            prodData({
             ...data,
@@ -94,7 +94,7 @@ const UpdateProduct = () => {
     const navigate = useNavigate()
     function submitupdate(e){
         e.preventDefault();
-        axios.put( `http://127.0.0.1:4000/api/ListOfProducts/${id}` , data).then(() => {
+        axios.put( `https://bbreact-2.onrender.com/api/ListOfProducts/${id}` , data).then(() => {
             navigate('/ProductAdmin')
             
         }).catch((err) => {

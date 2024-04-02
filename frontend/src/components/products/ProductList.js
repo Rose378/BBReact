@@ -12,7 +12,7 @@ class ProductList extends React.Component{
     }
 
     componentDidMount(){
-        let dataUrl = `https://bbreact.onrender.com/api/ListOfProducts/`;
+        let dataUrl = `https://bbreact-2.onrender.com/api/ListOfProducts/`;
         axios.get(dataUrl).then((res) => {
             this.setState({
                 products: res.data

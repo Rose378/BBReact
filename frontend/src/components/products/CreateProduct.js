@@ -63,7 +63,7 @@ base64Image = (imageFile) => {
 //submit to server
 submitProduct = (event) => {
     event.preventDefault();
-    let dataUrl = `https://bbreact.onrender.com/api/ListOfProducts/`
+    let dataUrl = `https://bbreact-2.onrender.com/api/ListOfProducts/`
     
     axios.post(dataUrl , this.state.product).then(() => {
     this.setState({
