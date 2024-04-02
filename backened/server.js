@@ -9,22 +9,14 @@ dotenv.config({path:'./config/config.env'});
 const host = process.env.HOST;
 const port = process.env.PORT;
 
-app.use(cors())
 
-// Define the origins from which requests are allowed
-const allowedOrigins = ['localhost:3001/', 'https://bbreact-2.onrender.com'];
-
-// Configure CORS middleware
 app.use(cors({
-  origin: function(origin, callback) {
-    // Check if the request origin is included in the allowed origins
-    if (!origin || allowedOrigins.includes(origin)) {
-      callback(null, true);
-    } else {
-      callback(new Error('Not allowed by CORS'));
-    }
-  }
-}));
+    origin: 'https://tourmaline-banoffee-584430.netlify.app',
+    methods: ['GET', 'POST'],
+    allowedHeaders: ['Content-Type', 'Authorization']
+  }));
+  app.options('*', cors());
+
 
 // Express 4.0
 app.use(bodyParser.json({ limit: '10mb' }));
