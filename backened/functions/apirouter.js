@@ -3,7 +3,7 @@ const router = express.Router();
 // const serverless = require('serverless-http');
 const app = express();
 const Product = require('../models/product');
-
+const Login = require('../models/LoginDetails')
 
 
 //get all employees
@@ -120,6 +120,63 @@ router.delete('/ListOfProducts/:id' , async(req,res) => {
 })
 
 
+
+
+//get all employees
+router.get('/Login' , async(req,res) => {
+    try{
+        let logins = await Login.find();
+        res.status(200).json(logins)
+    }
+    catch(err){
+        console.log(err);
+        res.status(500).json({
+            msg: err.message
+        })
+    }
+});
+
+//get single employe
+router.get('/Login/:id' , async(req,res) => {
+    try{
+        let LoginID = req.params.id
+        let LoginAccount = await Login.findById(LoginID);
+        res.status(200).json(LoginAccount)
+    }
+    catch(err){
+        console.log(err);
+        res.status(500).json({
+            msg: err.message
+        })
+    }
+})
+
+router.post('/Login' , async(req,res) => {
+    try{
+        let loginDetails = {
+            name:req.body.name,
+            email:req.body.email,
+            password:req.body.password
+        }
+               //login exists or not check
+               let Loginacc  = await Login.findOne({name:loginDetails.name });
+               if(Loginacc){
+                   return express.res.status(500).json({
+                       msg: 'already exists'
+                   })
+               }
+               Loginacc = new Login(loginDetails)
+               Loginacc = await Loginacc.save(); //insert product to database
+               res.status(200).json(loginDetails)
+
+    }
+    catch(err){
+        console.log(err);
+        res.status(500).json({
+            msg: err.message
+        })
+    }
+})
 
 module.exports = router;
 

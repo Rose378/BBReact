@@ -49,15 +49,14 @@ const UpdateProduct = () => {
         console.log(`${id}`)
         axios.get(dataUrl).then((res) => {
            prodData({
-            ...data,
             name:res.data.name,
             price:res.data.price,
             quantity:res.data.quantity,
-            info:res.data.info ,  
+            info:res.data.info
            })
     })
   
-    },[data,id])
+    },[id])
 
     const changeInput = (event) => {
         event.preventDefault();

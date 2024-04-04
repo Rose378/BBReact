@@ -1,6 +1,5 @@
 import React, { Fragment } from "react";
 import { Link } from "react-router-dom";
-
 class Navbar extends React.Component{
     
  
@@ -21,8 +20,9 @@ class Navbar extends React.Component{
                                 </li>
                             </ul>
                            </div>
-                    
-                        <Link to='/ProductAdmin' className="navbar-brand text-dark">ProductAdmin</Link>
+                           <Link to='/UserLogin' className="navbar-brand text-dark">UserLogin</Link>
+
+                        <Link to='/AdminLogin' className="navbar-brand text-dark">AdminLogin</Link>
                         <div className="d-flex align-items-center">
                         <i className="fa fa-shopping-cart cartsize ">
                            </i> 
